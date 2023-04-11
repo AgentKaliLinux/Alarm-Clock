@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="navbaigation">
+    <div class="navbar"><h3>Alarm Clock</h3></div>
+  </div>
+  <div class="time-section">
+    <span id="Time"></span>
+    <input id="hours" value="0" type="number" min="0" max="24" />
+    <input id="mins" value="0" type="number" min="0" max="60" />
+    <input id="secs" value="0" type="number" min="0" max="60" />
+    <button id="btn">Set Alarm</button>
+    <form action="/">
+      <button id="clearBtn">Clear Alarm</button>
+    </form>
+  </div>
+  <div class="alarmSection">
+    <span id="setAlarm" class="setAlarmClass"></span>
+  </div>
+  
+
+  <script src="index.js"></script>
+</body>
+</html>
