@@ -18,8 +18,6 @@ let Time = setInterval(() => {
 
 btn.addEventListener('click', () => {
 
-    var askAlarm = confirm('Do You Want To Repeat Alarm Or Not ? If You Want Repeat Click Okay OtherWise Cancel ');
-
     const alarmTime = `${hours.value}:${mins.value}:${secs.value}`;
     let newAlarmDiv = document.createElement('div');
     let newAlarm = document.createElement('p');
@@ -42,21 +40,7 @@ btn.addEventListener('click', () => {
         }
     }
 
-    const oneTimeAlarm = () => {
 
-        const alarmTime = `${hours.value}:${mins.value}:${secs.value}`;
-        setInterval(() => {
-            const now = new Date();
-            const currentTime = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
-
-            if (currentTime === alarmTime) {
-                let audioElement = new Audio('alarm.mp3')
-                audioElement.play()
-            }
-        }, 1000);
-    }
-
-    const repeatableAlarm = () => {
         const alarmTime = `${hours.value}:${mins.value}:${secs.value}`;
         setInterval(() => {
             const now = new Date();
@@ -69,23 +53,15 @@ btn.addEventListener('click', () => {
                 audioElement.play()
             }
         }, 1000);
-    }
 
-    if (askAlarm) {
-        repeatableAlarm();
 
-    }
-    else {
-        oneTimeAlarm();
-    }
 
     deleteAlarm.addEventListener('click', deleteAlarmSpecifically)
 
 })
 
 const deleteAllAlarm = () => {
-    alert('All Alarms Are Cleared !')
-    localStorage.clear();
+    alert('All Alarms Are Cleared !');
 }
 
 clearBtn.addEventListener('click', deleteAllAlarm)
